@@ -20,7 +20,7 @@ This is a line chart of the New Zealand Kyoto Protocol net position expressed in
 
 ![](NZ-Kyoto-Net-Asset-720by540v2.png)
 
-##Index of files
+## Index of files
 
 1. cer.html (the html of the Ministry for the Environment's web page "Historic updates of the Kyoto Protocol financial information")
 1. nz-kyoto-cer-price-2005-2015.csv (the output data, the tidied monthly CER price data)
