@@ -22,10 +22,10 @@ This is a line chart of the New Zealand Kyoto Protocol net position expressed in
 
 ## Index of files
 
-1. cer.html (the html of the Ministry for the Environment's web page "Historic updates of the Kyoto Protocol financial information")
-1. nz-kyoto-cer-price-2005-2015.csv (the output data, the tidied monthly CER price data)
-1. cer.r (R script file of code to tidy the .html file)
-1. Licence.txt (Public Domain  Dedication and License v1.0 <a href="http://opendatacommons.org/licenses/pddl/1.0/">http://opendatacommons.org/licenses/pddl/1.0/>
+1. [cer.html](cer.html) (the html of the Ministry for the Environment's web page "Historic updates of the Kyoto Protocol financial information")
+1. [nz-kyoto-cer-price-2005-2015.csv[(nz-kyoto-cer-price-2005-2015.csv) (the output data, the tidied monthly CER price data)
+1. [cer.r](cer.r) (R script file of code to tidy the .html file)
+1. [Licence.txt](Licence.txt) (Public Domain  Dedication and License v1.0 <a href="http://opendatacommons.org/licenses/pddl/1.0/">http://opendatacommons.org/licenses/pddl/1.0/>
 1. NZ-Kyoto-Prices-720by540v2.svg 
 1. NZ-Kyoto-Net-Units-720by540v2.png
 1. NZ-Kyoto-Net-Asset-720by540v2.png
