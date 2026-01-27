@@ -2,21 +2,19 @@ Historic updates of the Kyoto Protocol financial information 30 March 2016
 
 http://www.mfe.govt.nz/climate-change/reporting-greenhouse-gas-emissions/nzs-net-position-under-kyoto-protocol/historic
 
-This page has projected net position estimate changes since 2002 and carbon price changes since 2005
-Projected net position estimate changes since 2002
-getwd()
-[1] "/home/simon"
-setwd("/home/simon/R/cer")
+# This page has projected net position estimate changes since 2002 and carbon price changes since 2005
 
 getwd()
-[1] "/home/simon/r/cer"
+[1] "/home/user"
+setwd("/home/user/R/cer")
+
+getwd()
+[1] "/home/user/r/cer"
 
 library(XML)
 library(tidyr)
 
-#data_df <- 
-head(readHTMLTable("cer.html",skip.rows =1,which=1))
-
+#data_df <- head(readHTMLTable("cer.html",skip.rows =1,which=1))
 
                                  V1                               V2
 1 Financial Statements Period Ended Net position excluding transfers
@@ -182,7 +180,6 @@ df2[["Value of the Net Asset/(Liability) (NZ$m)"]]<-as.numeric(df2[["Value of th
 df3 <- data.frame(df2, colClasses=c("date","numeric","numeric","numeric","factor","character","numeric","numeric","numeric"))
 
 str(df3)
-
 
 Named logi [1:9] TRUE TRUE TRUE TRUE TRUE TRUE ...
  - attr(*, "names")= chr [1:9] "Financial Statements Period Ended" "Net position excluding transfers" "Net transfers from the assigned amount" "Net position" ...
@@ -451,6 +448,59 @@ sort(df[["Financial Statements Period Ended"]],decreasing=TRUE)
 [121] "2005-05-15"
 
 -------------------------------------------------------------------------------------------------------------------
+cer <- read.csv("nz-kyoto-cer-price-2005-2015.csv", skip=0,header=TRUE, sep=",", na.strings="NaN", dec=".", strip.white=TRUE)
+'data.frame':	121 obs. of  8 variables:
+ $ Financial.Statements.Period.Ended        : chr  "2005-05-15" "2005-06-15" "2005-07-15" "2005-08-15" ...
+ $ Net.position.excluding.transfers         : num  -36.2 -36.2 -36.2 -36.2 -36.2 -36.2 -36.2 -64 -64 -64 ...
+ $ Net.transfers.from.the.assigned.amount   : num  0 0 0 0 0 0 0 0 0 0 ...
+ $ Net.position                             : num  -36.2 -36.2 -36.2 -36.2 -36.2 -36.2 -36.2 -64 -64 -64 ...
+ $ Carbon.Price                             : chr  "USD 6.00" "USD 6.00" "USD 6.00" "USD 6.00" ...
+ $ NZ..Exchange.Rate                        : num  0.708 0.701 0.684 0.69 0.693 ...
+ $ Carbon.Price..NZ..                       : num  8.48 8.56 8.78 8.7 8.66 8.54 8.55 8.78 8.79 9.09 ...
+ $ Value.of.the.Net.Asset..Liability...NZ.m.: int  -307 -310 -318 -315 -313 -309 -309 -562 -563 -582 ... 
+ # change date column to date format
+cer$Financial.Statements.Period.Ended <- as.Date(cer$Financial.Statements.Period.Ended)
+# check the date formatted column
+str(cer[["Financial.Statements.Period.Ended"]]) 
+Date[1:121], format: "2005-05-15" "2005-06-15" "2005-07-15" "2005-08-15" "2005-09-15" ... 
+# check the first 2 rows of data frame
+head(cer,2)
+  Financial.Statements.Period.Ended Net.position.excluding.transfers
+1                        2005-05-15                            -36.2
+2                        2005-06-15                            -36.2
+  Net.transfers.from.the.assigned.amount Net.position Carbon.Price
+1                                      0        -36.2     USD 6.00
+2                                      0        -36.2     USD 6.00
+  NZ..Exchange.Rate Carbon.Price..NZ..
+1            0.7076               8.48
+2            0.7010               8.56
+  Value.of.the.Net.Asset..Liability...NZ.m.
+1                                      -307
+2                                      -310 
+names(cer) 
+[1] "Financial.Statements.Period.Ended"        
+[2] "Net.position.excluding.transfers"         
+[3] "Net.transfers.from.the.assigned.amount"   
+[4] "Net.position"                             
+[5] "Carbon.Price"                             
+[6] "NZ..Exchange.Rate"                        
+[7] "Carbon.Price..NZ.."                       
+[8] "Value.of.the.Net.Asset..Liability...NZ.m."
+
+# create line chart with line colour #D2691E or "Hot Cinnamon" 
+#svg(filename="NZ-Kyoto-Prices-720by540v1.svg", width = 8, height = 6, pointsize = 12, onefile = FALSE, family = "sans", bg = "white", antialias = c("default", "none", "gray", "subpixel"))
+#png("NZ-Kyoto-Prices-560by420-v1.png", bg="white", width=560, height=420,pointsize = 14)
+png("NZ-Kyoto-Prices-560by420-v2.png", bg="white", width=560, height=420,pointsize = 12)
+par(mar=c(2.7,2.7,1,1)+0.1)
+plot(cer$Financial.Statements.Period.Ended,cer$"Carbon.Price..NZ..",ylim=c(0,34),tck=0.01,axes=TRUE,ann=TRUE, type="l",las=1,lwd=3,col="#D2691E",ylab="",xlab="",main="")
+axis(side=3, tck=0.01, las=0,tick=TRUE,labels = FALSE)
+axis(side=4, tck=0.01, las=0,tick=TRUE,labels = FALSE)
+grid(col="darkgray")
+mtext(side=3,cex=1.7, line=-4.2,expression(paste("Carbon prices used in calculation of New Zealand \nKyoto Protocol net position 2005 - 2015")) )
+mtext(side=2,cex=1, line=-1.3,"$NZ Dollars/unit")
+mtext(side=1, adj=0,line =-1.1 ,cex=0.8,"Data: Historic updates of the Kyoto Protocol financial information\nhttps://github.com/theecanmole/Historic-updates-of-the-Kyoto-Protocol-carbon-price")
+dev.off()
+
 
 cer <- read.csv("HistoricupdatesKyotoProtocolfinancialinformation2015.csv", skip=4,header=TRUE, sep=",", na.strings="NaN", dec=".", strip.white=TRUE)
 str(cer) 
@@ -640,7 +690,6 @@ mtext(side=3,cex=1.7, line=-4.2, expression(paste("New Zealand Kyoto Protocol Ne
 mtext(side=2,cex=1, line=-1.3,"Million Kyoto units")
 dev.off()
 
-markdownToHTML(file = "/home/simon/R/nzu/Readme.md", output = "readme.html")
 ----------------------------------------------------------------
 4/02/2017
 opened cer.rdata workspace
