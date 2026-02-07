@@ -4,13 +4,13 @@ This is an archived copy of [Historic updates of the Kyoto Protocol financial in
 
 It sets out New Zealand's net position (a financial asset or liability) under the Kyoto Protocol. The page included a table of monthly international carbon prices converted to $NZ. This repository preserves that data set in a tidied public domain format. I saved the web page as an [html file](cer.html) then wrote some [R commands](cer.r) to make it into a [tidy dataframe](nz-kyoto-cer-price-2005-2015.csv).
 
-There is [an introduction](https://web.archive.org/web/20160503022352/http://www.mfe.govt.nz/climate-change/reporting-greenhouse-gas-emissions/nzs-net-position-under-kyoto-protocol/about-net).
+## Background information
 
-And a [background](https://web.archive.org/web/20160415183825/http://www.mfe.govt.nz/node/16642).
+There is [an introduction](https://web.archive.org/web/20160503022352/http://www.mfe.govt.nz/climate-change/reporting-greenhouse-gas-emissions/nzs-net-position-under-kyoto-protocol/about-net), and a [background](https://web.archive.org/web/20160415183825/http://www.mfe.govt.nz/node/16642) and a New Zealand Treasury [e Information Releases](http://www.treasury.govt.nz/publications/informationreleases/carbonprice) from 2012.
 
-And information was on this New Zealand Treasury webpage [Carbon Price Information Releases](http://www.treasury.govt.nz/publications/informationreleases/carbonprice) from 2012.
+## Data sets
 
-1. [nz-kyoto-cer-price-2005-2015.csv](nz-kyoto-cer-price-2005-2015.csv) (the output data, monthly Certified Emission Reduction unit prices, currency conversion rate, New Zealand dollar carbon prices)
+1. [nz-kyoto-cer-price-2005-2015.csv](nz-kyoto-cer-price-2005-2015.csv) (the output data, monthly international Certified Emission Reduction unit prices, currency conversion rates, New Zealand dollar carbon prices)
 
 1. [New Zealand dollar carbon prices](nz-carbon-prices-2005-2015.csv) (only the date and New Zealand dollar carbon price)
 
@@ -18,6 +18,7 @@ And information was on this New Zealand Treasury webpage [Carbon Price Informati
 
 1. [Google sheet of the table web-scraped from the archived web page](https://docs.google.com/spreadsheets/d/1GPw0cyPWK7X6oYklgpZEaLRwYjDU2YfcuCtCgUZTzWc/edit?gid=0) 
 
+## Charts
 
 This is a line chart of the carbon prices from 2005 to 2015.
 
