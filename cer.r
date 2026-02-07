@@ -6,12 +6,7 @@ http://www.mfe.govt.nz/climate-change/reporting-greenhouse-gas-emissions/nzs-net
 
 # This page has projected net position estimate changes since 2002 and carbon price changes since 2005. The commands below read the html table into R and tidy it up.
 # check working directory if needed
-getwd()
-[1] "/home/user"
-setwd("/home/user/R/cer")
 
-getwd()
-[1] "/home/user/r/cer"
 # load packages
 library(XML)
 library(tidyr)
@@ -145,10 +140,9 @@ head(df2[["Price"]])
 tail(df2[["Price"]])
 [1] "6.00" "6.00" "6.00" "6.00" "6.00" "6.00"
 
-# date
+# How is the 'date' (month end) column formatted?
 tail(df2[["Financial Statements Period Ended"]])
 [1] "Oct-05" "Sep-05" "Aug-05" "Jul-05" "Jun-05" "May-05"
-
 
 # replace Financial Statements Period ended (month) a month date-formatted object starting from 1st of each month from 01/06/2005
 MonthEnddates = seq(as.Date('2005-06-01'), by = 'months', length = 121)
@@ -240,7 +234,7 @@ write.table(df3, file = "nz-carbon-prices-2005-2015.csv", sep = ",", col.names =
 ## charts
 
 # create line chart with line colour #D2691E or "Hot Cinnamon" 
-svg(filename="NZ-Kyoto-Prices-720by540v1.svg", width = 8, height = 6, pointsize = 12, onefile = FALSE, family = "sans", bg = "white", antialias = c("default", "none", "gray", "subpixel"))
+svg(filename="NZ-Kyoto-Prices-720by540v2.svg", width = 8, height = 6, pointsize = 12, onefile = FALSE, family = "sans", bg = "white", antialias = c("default", "none", "gray", "subpixel"))
 #png("NZ-Kyoto-Prices-560by420-v1.png", bg="white", width=560, height=420,pointsize = 14)
 #png("NZ-Kyoto-Prices-560by420-v2.png", bg="white", width=560, height=420,pointsize = 12)
 par(mar=c(2.7,2.7,1,1)+0.1)
