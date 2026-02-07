@@ -18,6 +18,7 @@ And information was on this New Zealand Treasury webpage [Carbon Price Informati
 
 1. [Google sheet of the table web-scraped from the archived web page](https://docs.google.com/spreadsheets/d/1GPw0cyPWK7X6oYklgpZEaLRwYjDU2YfcuCtCgUZTzWc/edit?gid=0) 
 
+
 This is a line chart of the carbon prices from 2005 to 2015.
 
 ![](NZ-Kyoto-Prices-720by540v2.svg)
@@ -33,10 +34,21 @@ This is a line chart of the New Zealand Kyoto Protocol net position expressed in
 ## Index of files
 
 1. [cer.html](cer.html) (the html of the Ministry for the Environment's web page "Historic updates of the Kyoto Protocol financial information")
-1. [nz-kyoto-cer-price-2005-2015.csv](nz-kyoto-cer-price-2005-2015.csv) (the output data, the tidied monthly CER price data)
-1. [cer.r](cer.r) (R script file of code to tidy the .html file)
-1. [Licence.txt](Licence.txt) (Public Domain  Dedication and License v1.0 <a href="http://opendatacommons.org/licenses/pddl/1.0/">http://opendatacommons.org/licenses/pddl/1.0/>
-1. NZ-Kyoto-Prices-720by540v2.svg 		a line chart of the carbon prices from 2005 to 2015
-1. NZ-Kyoto-Net-Units-720by540v2.png	a line chart of the New Zealand Kyoto Protocol net position in emission units
-1. NZ-Kyoto-Net-Asset-720by540v2.png	a line chart of the New Zealand Kyoto Protocol net position expressed in $NZ millions
 
+1. [Google sheet of the table web-scraped from the archived web page](https://docs.google.com/spreadsheets/d/1GPw0cyPWK7X6oYklgpZEaLRwYjDU2YfcuCtCgUZTzWc/edit?gid=0)
+
+1. [Google sheet of the tidy dataframe](https://docs.google.com/spreadsheets/d/1InAUrcccUdnNujuhbdsrJOZs0or8dydj9bIOllRG2WY/edit?gid=0)
+
+1. [nz-kyoto-cer-price-2005-2015.csv](nz-kyoto-cer-price-2005-2015.csv) (the output data, the tidied monthly CER price data)
+
+1. [New Zealand dollar carbon prices](nz-carbon-prices-2005-2015.csv) (only the date and New Zealand dollar carbon price)
+
+1. [cer.r](cer.r) (R script file of code to tidy the .html file)
+
+1. [NZ-Kyoto-Prices-720by540v2.svg](NZ-Kyoto-Prices-720by540v2.svg) 		a line chart of the carbon prices from 2005 to 2015
+
+1. [NZ-Kyoto-Net-Units-720by540v2.png](NZ-Kyoto-Net-Units-720by540v2.png)	a line chart of the New Zealand Kyoto Protocol net position in emission units
+
+1. [NZ-Kyoto-Net-Asset-720by540v2.png](NZ-Kyoto-Net-Asset-720by540v2.png)	a line chart of the New Zealand Kyoto Protocol net position expressed in $NZ millions
+
+1. [Licence.txt](Licence.txt) (Public Domain  Dedication and License v1.0 <a href="http://opendatacommons.org/licenses/pddl/1.0/">http://opendatacommons.org/licenses/pddl/1.0/>
