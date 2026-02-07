@@ -51,4 +51,4 @@ This is a line chart of the New Zealand Kyoto Protocol net position expressed in
 
 1. [NZ-Kyoto-Net-Asset-720by540v2.png](NZ-Kyoto-Net-Asset-720by540v2.png)	chart of the New Zealand Kyoto Protocol net position expressed in $NZ millions
 
-1. [Licence.txt](Licence.txt) (Public Domain  Dedication and License v1.0 <a href="http://opendatacommons.org/licenses/pddl/1.0/">http://opendatacommons.org/licenses/pddl/1.0/></ref>
+1. [Licence.txt](Licence.txt) (Public Domain  Dedication and License v1.0 <a href="http://opendatacommons.org/licenses/pddl/1.0/">http://opendatacommons.org/licenses/pddl/1.0/</ref>
